@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(188, 172, 172, 0.591);
+}
+
+.keyboard {
+  border: 1px solid black;
+  padding: 5px;
+  position: relative;
+  margin: 0 auto;
+  width: 718px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.keyboard .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.keyboard .key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.keyboard :active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  background-color: aqua;
+}
+
+.keyboard :hover {
+  cursor: pointer;
+}
+
+.keyboard .backspace {
+  width: 102px;
+  padding: 0 3px;
+  text-align: center;
+}
+
+.keyboard .tab {
+  width: 55px;
+}
+
+.keyboard .capslock {
+  width: 80px;
+}
+
+.keyboard .enter {
+  width: 107px;
+}
+
+.keyboard .shift {
+  width: 93px;
+}
+
+.keyboard .ctrl,
+.keyboard .win,
+.keyboard .alt {
+  width: 46px;
+}
+
+.keyboard .space {
+  width: 299px;
+}
+
+.title {
+  font-size: 30px;
+  color: rgba(23, 79, 152, 0.8);
+  margin: 10px auto;
+  text-align: center;
+}
+
+.textarea {
+  display: block;
+  width: 718px;
+  height: 200px;
+  margin: 10px auto 10px;
+  padding: 10px;
+  font-size: 18px;
+  color: #444444;
+}
+
+.asss {
+  background-color: black;
+}
+/*# sourceMappingURL=style.css.map */
