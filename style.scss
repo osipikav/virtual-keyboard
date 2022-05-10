@@ -12,10 +12,6 @@
   width: 718px;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
-
-  // height: 150px;
-  // background-color: aqua;
 
   .line {
     display: flex;
@@ -31,21 +27,6 @@
     height: 40px;
     margin: 3px;
     align-items: center;
-
-    // animation: moveInBottom ease-out;
-    // // animation-fill-mode: backwards;
-
-    // @keyframes moveInBottom {
-    //   0% {
-    //     opacity: 0;
-    //     transform: translateY(30px);
-    //   }
-
-    //   100% {
-    //     opacity: 1;
-    //     transform: translateY(0px);
-    //   }
-    // }
   }
   :active {
     transform: scale(0.95);
@@ -53,7 +34,6 @@
     background-color: aqua;
   }
   :hover {
-    // background-color: aliceblue;
     cursor: pointer;
   }
   .backspace {
@@ -97,7 +77,4 @@
   padding: 10px;
   font-size: 18px;
   color: #444444;
-}
-.asss {
-  background-color: black;
 }
