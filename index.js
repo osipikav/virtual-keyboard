@@ -202,10 +202,10 @@ document.onkeydown = function (event) {
   //   keyButton.forEach((button) => {
   //     button.classList.remove("active");
   //   });
-  console.log("event.code :>> ", event.code);
-  console.log("event.code :>> ", event.key);
+  //   console.log("event.code :>> ", event.code);
+  //   console.log("event.code :>> ", event.key);
   let activeKey = document.getElementById(event.key);
-  console.log("activeKey :>> ", activeKey);
+  //   console.log("activeKey :>> ", activeKey);
 
   if (activeKey === null) {
     if (event.code == "Space") {
