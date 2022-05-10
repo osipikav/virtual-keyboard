@@ -228,7 +228,6 @@ let keyButton = document.querySelectorAll(".key");
 //   };
 // });
 
-// function cardsCreate() {
 //     fcArray.forEach((fc) => {
 //       let cards = document.createElement("div");
 //       cards.classList.add("card");
@@ -238,9 +237,4 @@ let keyButton = document.querySelectorAll(".key");
 //       imgFront.src = `./img/png/${fc}.png`;
 //       imgFront.classList.add("front-face");
 //       let imgBack = document.createElement("img");
-//       cards.append(imgBack);
-//       imgBack.src = `./img/png/champions-league.png`;
-//       imgBack.classList.add("back-face");
-//       container.append(cards);
-//     });
-//   }
+//
