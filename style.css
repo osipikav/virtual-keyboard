@@ -110,4 +110,14 @@
   font-size: 18px;
   color: #444444;
 }
+
+.active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  background-color: aqua;
+}
 /*# sourceMappingURL=style.css.map */
