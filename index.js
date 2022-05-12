@@ -1,4 +1,4 @@
-const keys = [
+const keysEn = [
   "`",
   "1",
   "2",
@@ -41,7 +41,7 @@ const keys = [
   ";",
   "'",
   "Enter",
-  "Shift",
+  "ShiftLeft",
   "z",
   "x",
   "c",
@@ -53,19 +53,89 @@ const keys = [
   ".",
   "/",
   "ArrowUp",
-  "Shift",
-  "Control",
+  "ShiftRight",
+  "ControlLeft",
   "Meta",
-  "Alt",
+  "AltLeft",
   "Space",
-  "Alt",
+  "AltRight",
   "ArrowLeft",
   "ArrowDown",
   "ArrowRight",
-  "Control",
+  "ControlRight",
 ];
 
-// let body = document.body;
+const keysRu = [
+  "ё",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
+  "-",
+  "=",
+  "Backspace",
+  "Tab",
+  "й",
+  "ц",
+  "у",
+  "к",
+  "е",
+  "н",
+  "г",
+  "ш",
+  "щ",
+  "з",
+  "х",
+  "ъ",
+  "\\",
+  "Delete",
+  "CapsLock",
+  "ф",
+  "ы",
+  "в",
+  "а",
+  "п",
+  "р",
+  "о",
+  "л",
+  "д",
+  "ж",
+  "э",
+  "Enter",
+  "ShiftLeft",
+  "я",
+  "ч",
+  "с",
+  "м",
+  "и",
+  "т",
+  "ь",
+  "б",
+  "ю",
+  ".",
+  "ArrowUp",
+  "ShiftRight",
+  "ControlLeft",
+  "Meta",
+  "AltLeft",
+  "Space",
+  "AltRight",
+  "ArrowLeft",
+  "ArrowDown",
+  "ArrowRight",
+  "ControlRight",
+];
+
+let keys = keysEn;
+let bool = true;
+let caps = false;
+
 let p = document.createElement("p");
 p.classList.add("title");
 p.innerHTML = "RSS Виртуальная клавиатура";
@@ -73,22 +143,22 @@ document.body.appendChild(p);
 
 let textarea = document.createElement("textarea");
 textarea.classList.add("textarea");
-// textarea.setAttribute('')
+textarea.autofocus = true;
 document.body.appendChild(textarea);
 
 let keyboard = document.createElement("div");
 keyboard.classList.add("keyboard");
 document.body.appendChild(keyboard);
 createKey();
-let keyButton = document.querySelectorAll("button");
 
-// console.log("body :>> ", body);
-// console.log("keyboard :>> ", keyboard);
 function createKey() {
   keys.forEach((elem) => {
     let key = document.createElement("button");
     key.innerHTML = elem;
     key.classList.add("key");
+    if (caps == "true") {
+      key.classList.add("caps");
+    }
 
     switch (elem) {
       case "Backspace":
@@ -106,16 +176,20 @@ function createKey() {
       case "Enter":
         key.classList.add("enter");
         break;
-
-      case "Shift":
+      case "ShiftRight":
+      case "ShiftLeft":
         key.classList.add("shift");
+        key.innerHTML = "Shift";
         break;
-      case "Control":
+      case "ControlLeft":
+      case "ControlRight":
         key.classList.add("ctrl");
         key.innerHTML = "Ctrl";
         break;
-      case "Alt":
+      case "AltLeft":
+      case "AltRight":
         key.classList.add("alt");
+        key.innerHTML = "Alt";
         break;
       case "Meta":
         key.classList.add("win");
@@ -137,80 +211,40 @@ function createKey() {
       case "ArrowDown":
         key.innerHTML = "↓";
         break;
+      default:
+        if (caps == true) {
+          key.innerHTML = elem.toUpperCase();
+          elem = elem.toUpperCase();
+        } else {
+          key.innerHTML = elem;
+        }
+        break;
     }
-    // key.setAttribute("data-key", elem);
+
     key.setAttribute("id", elem);
-    // key.addEventListener("click", (event) => mouseClick(event));
 
     keyboard.appendChild(key);
   });
 }
 
-// mouseClick(event) {
-// const content = event.currentTarget.dataset.key;
-// const textArea = this.elements.textarea;
-// let cursorPosition = textArea.selectionStart + 1;
-// let [value, start, end] = [
-//   (this.properties.isCapsLock) ? content.toUpperCase() : content,
-//   textArea.selectionStart,
-//   textArea.selectionEnd,
-// ];
-// switch (content) {
-//   case 'del':
-//     [value, end] = ['', textArea.selectionEnd + 1];
-//     break;
-//   case 'backspace':
-//     [value, start] = ['', textArea.selectionStart - 1];
-//     break;
-//   case 'enter':
-//     value = '\n';
-//     break;
-//   case 'tab':
-//     value = '\t';
-//     break;
-//   case 'backtick':
-//     value = '`';
-//     break;
-//   case 'spacebar':
-//     value = ' ';
-//     break;
-//   case 'capslock':
-//     event.currentTarget.classList.toggle('pressed');
-//     value = '';
-//     cursorPosition = textArea.selectionStart;
-//     this.capsLockOn();
-//     break;
-//   default:
-//     break;
-// }
-// if (start >= 0) textArea.setRangeText(value, start, end);
-// if (content === 'del' || content === 'backspace') {
-//   cursorPosition = textArea.selectionStart;
-// }
-
-// this.elements.textarea.focus();
-// this.elements.textarea.selectionStart = cursorPosition;
-// }
-
-// keyElement.setAttribute("data-key", key);
-
-// keyElement.addEventListener("click", (event) => this.mouseClick(event));
-
-// keyboardFragment.append(keyElement);
-
 document.onkeydown = function (event) {
-  //   keyButton.forEach((button) => {
-  //     button.classList.remove("active");
-  //   });
-  //   console.log("event.code :>> ", event.code);
-  //   console.log("event.code :>> ", event.key);
+  console.log("event.code :>> ", event.code);
+  console.log("event.key :>> ", event.key);
   let activeKey = document.getElementById(event.key);
-  //   console.log("activeKey :>> ", activeKey);
 
   if (activeKey === null) {
     if (event.code == "Space") {
       activeKey = document.getElementById(event.code);
     }
+  }
+
+  if (
+    event.key == "Shift" ||
+    event.key == "Control" ||
+    event.key == "Alt" ||
+    event.key == "AltGraph"
+  ) {
+    activeKey = document.getElementById(event.code);
   }
 
   if (activeKey !== null) {
@@ -225,33 +259,43 @@ document.onkeyup = function (event) {
       activeKey = document.getElementById(event.code);
     }
   }
-  if (activeKey !== "null") {
+
+  if (
+    event.key == "Shift" ||
+    event.key == "Control" ||
+    event.key == "Alt" ||
+    event.key == "AltGraph"
+  ) {
+    activeKey = document.getElementById(event.code);
+  }
+
+  if (activeKey !== null) {
     activeKey.classList.remove("active");
   }
 };
 
-// let keyButton = document.querySelectorAll("button");
-// console.log(keyButton);
+document.addEventListener("keydown", function (event) {
+  if (event.shiftKey && event.ctrlKey) {
+    bool = !bool;
+    if (bool == false) {
+      keys = keysRu;
+    } else {
+      keys = keysEn;
+    }
+    keyboard.innerHTML = "";
+    createKey(keys);
+  }
 
-// keyButton.forEach((elem) => {
-//   //   elem.addEventListener("click", (event) => {
-//   //     //   this.mouseClick(event);
-//   //     console.log("event.code :>> ", event.code);
-//   //   });
+  if (event.key == "CapsLock") {
+    caps = !caps;
+    keyboard.innerHTML = "";
+    createKey(keys);
+    document.getElementById("CapsLock").classList.add("active");
+  }
+});
 
-//   elem.onclick = function (event) {
-//     let code = this.getAttribute;
-//     console.log("event.code :>> ", elem.);
-//   };
-// });
-
-//     fcArray.forEach((fc) => {
-//       let cards = document.createElement("div");
-//       cards.classList.add("card");
-//       cards.dataset.fc = `${fc}`;
-//       let imgFront = document.createElement("img");
-//       cards.append(imgFront);
-//       imgFront.src = `./img/png/${fc}.png`;
-//       imgFront.classList.add("front-face");
-//       let imgBack = document.createElement("img");
-//
+let footer = document.createElement("p");
+footer.classList.add("footer");
+footer.innerHTML =
+  "Клавиатура создана на операционной системе Windows Для переключения языка комбинация Ctrl + Shift";
+document.body.appendChild(footer);

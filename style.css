@@ -3,7 +3,6 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: rgba(188, 172, 172, 0.591);
 }
 
 .keyboard {
@@ -60,6 +59,7 @@
 
 .keyboard :hover {
   cursor: pointer;
+  background-color: aqua;
 }
 
 .keyboard .backspace {
@@ -96,7 +96,6 @@
 
 .title {
   font-size: 30px;
-  color: rgba(23, 79, 152, 0.8);
   margin: 10px auto;
   text-align: center;
 }
@@ -109,6 +108,7 @@
   padding: 10px;
   font-size: 18px;
   color: #444444;
+  resize: none;
 }
 
 .active {
@@ -119,5 +119,12 @@
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
   background-color: aqua;
+}
+
+.footer {
+  font-size: 20px;
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
