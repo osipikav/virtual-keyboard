@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: rgba(188, 172, 172, 0.591);
 }
 .keyboard {
   border: 1px solid black;
@@ -35,6 +34,7 @@
   }
   :hover {
     cursor: pointer;
+    background-color: aqua;
   }
   .backspace {
     width: 102px;
@@ -65,7 +65,6 @@
 
 .title {
   font-size: 30px;
-  color: rgba(23, 79, 152, 0.8);
   margin: 10px auto;
   text-align: center;
 }
@@ -77,9 +76,17 @@
   padding: 10px;
   font-size: 18px;
   color: #444444;
+  resize: none;
 }
 .active {
   transform: scale(0.95);
   transition: transform 0.2s;
   background-color: aqua;
+}
+
+.footer {
+  font-size: 20px;
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
 }
