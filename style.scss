@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.keyboard {
+  border: 1px solid black;
+  padding: 5px;
+  position: relative;
+  margin: 0 auto;
+  width: 718px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .key {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    align-items: center;
+  }
+  :active {
+    transform: scale(0.95);
+    transition: transform 0.2s;
+    background-color: aqua;
+  }
+  :hover {
+    cursor: pointer;
+    background-color: aqua;
+  }
+  .backspace {
+    width: 102px;
+    padding: 0 3px;
+    text-align: center;
+  }
+  .tab {
+    width: 55px;
+  }
+  .capslock {
+    width: 80px;
+  }
+  .enter {
+    width: 107px;
+  }
+  .shift {
+    width: 93px;
+  }
+  .ctrl,
+  .win,
+  .alt {
+    width: 46px;
+  }
+  .space {
+    width: 299px;
+  }
+}
+
+.title {
+  font-size: 30px;
+  margin: 10px auto;
+  text-align: center;
+}
+.textarea {
+  display: block;
+  width: 718px;
+  height: 200px;
+  margin: 10px auto 10px;
+  padding: 10px;
+  font-size: 18px;
+  color: #444444;
+  resize: none;
+}
+.active {
+  transform: scale(0.95);
+  transition: transform 0.2s;
+  background-color: aqua;
+}
+
+.footer {
+  font-size: 20px;
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
